@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
+import { DividerDirective, BigBrotherDirective } from '../@core/directives';
 
 @NgModule({
   imports: [
@@ -18,6 +19,11 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage,
+    DividerDirective,
+    BigBrotherDirective
+  ],
+  providers: []
 })
 export class HomePageModule {}

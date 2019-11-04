@@ -1,14 +1,72 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+
+  <div>
+    <h3>Is Big Brother watching?</h3>
+    <span [bigBrother]="'mouseover'"
+          secret="true"><u>Hover</u> to find out.</span>
   </div>
+
+  <div>
+    <h6>Normal Div</h6>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi velit veritatis ipsa eius molestias architecto quas.
+    Dolor, eaque voluptate autem debitis doloribus perspiciatis asperiores itaque esse repellat dolores atque. Corporis.
+  </div>
+
+  <div divider></div>
+  <div divider></div>
+
+  <div [bigBrother]="'copy'">
+    <h6>Copy Warning</h6>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi velit veritatis ipsa eius molestias architecto quas.
+    Dolor, eaque voluptate autem debitis doloribus perspiciatis asperiores itaque esse repellat dolores atque. Corporis.
+  </div>
+
+  <div divider></div>
+
+  <div [bigBrother]="'contextmenu'"
+       secret="true">
+    <h6>No Context Menu</h6>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi velit veritatis ipsa eius molestias architecto quas.
+    Dolor, eaque voluptate autem debitis doloribus perspiciatis asperiores itaque esse repellat dolores atque. Corporis.
+  </div>
+
+  <div divider></div>
+
+  <div [bigBrother]="'dblclick'" animation="true">
+    <h6>Double Click Warning</h6>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi velit veritatis ipsa eius molestias architecto quas.
+    Dolor, eaque voluptate autem debitis doloribus perspiciatis asperiores itaque esse repellat dolores atque. Corporis.
+  </div>
+
+  <div divider></div>
+
+  <div [bigBrother]="'paste'">
+    <h6>Disabled-Paste Inputs</h6>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+  </div>
+
+  <div>
+    <h6>Input Advice (on focus)</h6>
+    <input [bigBrother]="'focus'"
+           element="input"
+           type="text">
+  </div>
+
+  <div>
+    <h6>Input Advice (on loss of focus, or blur)</h6>
+    <input [bigBrother]="'blur'"
+           element="input"
+           type="text">
+  </div>
+
 </ion-content>
