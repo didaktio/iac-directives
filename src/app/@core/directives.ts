@@ -57,7 +57,7 @@ export class BigBrotherDirective implements AfterContentInit, OnDestroy {
     ]).create(this.el.nativeElement);
 
     constructor(
-        private renderer: Renderer,
+        private renderer: Renderer2,
         private el: ElementRef,
         private toast: ToastController,
         private builder: AnimationBuilder) { }
@@ -69,7 +69,7 @@ export class BigBrotherDirective implements AfterContentInit, OnDestroy {
             (this.el.nativeElement as Element).insertAdjacentHTML(position, `<ion-icon name="eye" style="font-size: 0.7em"></ion-icon>`);
         }
 
-        this.disposeListener = this.renderer.listen(this.el.nativeElement, this.action, async (e: Event) => {
+        this.disposeListener = this.renderer.listen(this.el.nativeElement, this.action, (e: Event) => {
 
             if(this.animation) this.player.play();
 
@@ -102,13 +102,12 @@ export class BigBrotherDirective implements AfterContentInit, OnDestroy {
                     break;
             }
 
-            const toast = await this.toast.create({
+            this.toast.create({
                 ...this.toastConfig,
                 message,
                 color,
                 duration
-            });
-            toast.present();
+            }).then(t => t.present());
         });
     }
 
