@@ -60,7 +60,8 @@ export class BigBrotherDirective implements AfterContentInit, OnDestroy {
         private renderer: Renderer2,
         private el: ElementRef,
         private toast: ToastController,
-        private builder: AnimationBuilder) { }
+        private builder: AnimationBuilder
+        ) { }
 
     ngAfterContentInit() {
 
@@ -102,12 +103,16 @@ export class BigBrotherDirective implements AfterContentInit, OnDestroy {
                     break;
             }
 
-            this.toast.create({
-                ...this.toastConfig,
-                message,
-                color,
-                duration
-            }).then(t => t.present());
+            this.toast.getTop().then(t => {
+                if(t) t.dismiss();
+                this.toast.create({
+                    ...this.toastConfig,
+                    message,
+                    color,
+                    duration
+                }).then(t => t.present());
+            })
+            
         });
     }
 
