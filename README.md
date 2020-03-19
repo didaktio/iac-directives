@@ -1,5 +1,5 @@
 # Ionic-Angular-Course: Directives (BONUS)
-Source code for the Directives tutorial from the `BONUS` section of the [Ionic Angular Course](https://github.com/didaktio/Ionic-Angular-Course).
+Source code for the Directives tutorial from the `BONUS` section of the [Ionic Angular Course](https://github.com/didaktio/Ionic-Angular-Course). 
 
 ## DEMO
 [https://iac-directives.firebaseapp.com]
